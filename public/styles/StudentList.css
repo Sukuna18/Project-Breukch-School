@@ -1,13 +1,30 @@
 .container-fluide{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	min-height: 100vh;
 	background-color: #76a5d7;
 
 }
+.navbar-dark .nav-item .nav-link {
+	color: #fff;
+  }
+  
+  .navbar-dark .nav-item .nav-link:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: all 0.3s ease;
+	border-radius: 0.25rem;
+	color: #fff;
+  }
+  
+  .fa-li {
+	position: relative;
+	left: 0;
+  }
 .row{
 	max-width: 1200px;
 	width: 100%;
+	margin-left: 10% ;
 
 }
 /* USER LIST TABLE */
