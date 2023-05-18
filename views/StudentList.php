@@ -32,39 +32,6 @@
             aria-expanded="false" style="padding-bottom: 0.4rem;">
             All
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark fa-ul">
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i class="fas fa-search"></i></span>All</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i
-                    class="fas fa-film"></i></span>Titles</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i class="fas fa-tv"></i></span>TV
-                Episodes</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i
-                    class="fas fa-user-friends"></i></span>Celebs</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i
-                    class="fas fa-building"></i></span>Companies</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i
-                    class="fas fa-key"></i></span>Keywords</a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><span class="fa-li pe-2"><i
-                    class="fas fa-search-plus"></i></span>Advanced
-                search<i class="fas fa-chevron-right ps-2"></i></a>
-            </li>
-          </ul>
           <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
         </div>
         <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
@@ -72,8 +39,8 @@
 
       <ul class="navbar-nav ms-3">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center me-3" href="#!">
-            <i class="fas fa-bookmark pe-2"></i> Liste
+          <a class="nav-link d-flex align-items-center me-3" href="/add">
+            <i class="fas fa-bookmark pe-2"></i>Enregister
           </a>
         </li>
       </ul>
@@ -120,7 +87,7 @@
 										<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 									</span>
 								</a>
-								<a href="#" class="table-link">
+								<a href="/edit" class="table-link">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>

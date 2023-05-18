@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	min-height: 100vh;
-	background-color: #76a5d7;
+	background: linear-gradient(45deg, #ce1e53, #8f00c7);
 
 }
 .navbar-dark .nav-item .nav-link {

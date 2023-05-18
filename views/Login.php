@@ -2,7 +2,7 @@
 <section class="text-center">
   <!-- Background image -->
   <div class="p-5 bg-image" style="
-        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        background: linear-gradient(45deg, #ce1e53, #8f00c7);
         height: 300px;
         "></div>
   <!-- Background image -->
@@ -18,21 +18,6 @@
         <div class="col-lg-8">
           <h2 class="fw-bold mb-5">Breukh'S School</h2>
           <form action="/list" method="post">
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <!-- <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <input type="text" id="form3Example1" class="form-control" />
-                  <label class="form-label" for="form3Example1">First name</label>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <input type="text" id="form3Example2" class="form-control" />
-                  <label class="form-label" for="form3Example2">Last name</label>
-                </div>
-              </div>
-            </div> -->
 
             <!-- Email input -->
             <div class="form-outline mb-4">

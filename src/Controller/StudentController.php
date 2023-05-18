@@ -20,4 +20,16 @@ class StudentController extends Controller
             'Styles' => 'styles/login.css'
         ]);
     }
+    public function edit()
+    {
+        $this->render('Edit.php', [
+            'Styles' => 'styles/Edit.css'
+        ]);
+    }
+    public function add()
+    {
+        $this->render('Add.php', [
+            'Styles' => 'styles/Add.css'
+        ]);
+    }
 }
