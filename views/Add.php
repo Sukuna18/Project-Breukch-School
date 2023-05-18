@@ -10,7 +10,7 @@
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#"><img id="MDB-logo"
+    <a class="navbar-brand" href="/list"><img id="MDB-logo"
         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo"
         draggable="false" height="30" /></a>
 
@@ -62,41 +62,36 @@
         <div class="h3">Formulaire d'Enregistrement Eleves</div>
 
         <div class="form">
-            <form action="/list" method="post">
+         
+            <form action="/add" method="post">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Prenom</label>
-                    <input type="text" name="prenom" class="form-control" required>
+                    <label for="prenom">Prenom</label>
+                    <input type="text" name="prenom" class="form-control" placeholder="prenom" required>
                 </div>
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Nom</label>
-                    <input type="text" name="nom" class="form-control" required>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" class="form-control" placeholder="nom" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Numero</label>
-                    <input type="number" name="numero" class="form-control" required>
+                    <label for="numero">Numero</label>
+                    <input type="number" name="numero" class="form-control" placeholder="numero" required>
                 </div>
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label>birthday</label>
-                    <input type="date" name="birthday" class="form-control" required>
+                    <label for="birthday">birthday</label>
+                    <input type="text" name="birthday" class="form-control" id="birthday" placeholder="YYYY-MM-DD" required>
+
                 </div>
                 
             </div>
-            <!-- <div class=" my-md-2 my-3">
-                <label>Classe</label>
-                <select id="sub" required>
-                    <option value="" selected hidden>Choose Option</option>
-                    <option value="6eme">6eme</option>
-                    <option value="5eme">5eme</option>
-                    <option value="4eme">4eme</option>
-                    <option value="2nd">2nd</option>
-                </select>
-            </div> -->
             <input type="submit" value="Enregistrer" class="btn btn-primary mt-3" style="margin-left:40%;"  >
             </form>
         </div>
+       
+
 
 
     </div>
+   

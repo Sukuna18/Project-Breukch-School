@@ -29,8 +29,12 @@ class StudentController extends Controller
     }
     public function add()
     {
+        $studentModel = new StudentModel();
+        $rowCount = $studentModel->getAllStudents();
         $this->render('Add.php', [
-            'Styles' => 'styles/Add.css'
+            'Styles' => 'styles/Add.css',
+            'rowCount' => $rowCount
+
         ]);
     }
     public function Annee(){
@@ -43,18 +47,58 @@ class StudentController extends Controller
             'title' => 'Classe',
         ]);
     }
-    public function addStudent(){
+    public function addStudent()
+    {
+        // Récupérer les données du formulaire
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];
         $numero = $_POST['numero'];
         $birthday = $_POST['birthday'];
-        $studentDB = new StudentModel();
-        $studentDB->addStudent($prenom, $nom, $numero,$birthday);
-        if ($studentDB) {
+        $studentModel = new StudentModel();
+        $rowCount = $studentModel->insertStudent($prenom, $nom, $numero, $birthday);
+
+        if ($rowCount > 0) {
             header('Location: /list');
-        }
-        else {
-            echo "Error";
+            exit();
+        } else {
+            echo "Erreur lors de l'ajout de l'étudiant.";
         }
     }
+    public function editStudent($id)
+    {
+        if (isset($_POST['prenom'], $_POST['nom'], $_POST['numero'], $_POST['birthday'])) {
+            $prenom = $_POST['prenom'];
+            $nom = $_POST['nom'];
+            $numero = $_POST['numero'];
+            $birthday = $_POST['birthday'];
+    
+            $studentModel = new StudentModel();
+            $rowCount = $studentModel->updateStudent($id, $prenom, $nom, $numero, $birthday);
+    
+            if ($rowCount > 0) {
+                header('Location: /list');
+                exit();
+            } else {
+                echo "Erreur lors de la modification de l'étudiant.";
+            }
+        } else {
+            $this->render('errroDB.php', [
+                'title' => 'erreur',
+            ]);
+        }
+    }
+    
+    
+    public function deleteStudent($id)
+    {
+        $studentModel = new StudentModel();
+        $rowCount = $studentModel->deleteStudent($id);
+        if ($rowCount > 0) {
+            header('Location: /list');
+            exit();
+        } else {
+            echo "Erreur lors de la suppression de l'étudiant.";
+        }
+    }
+
 }

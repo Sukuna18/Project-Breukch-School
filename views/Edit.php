@@ -10,7 +10,7 @@
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#"><img id="MDB-logo"
+    <a class="navbar-brand" href="/list"><img id="MDB-logo"
         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo"
         draggable="false" height="30" /></a>
 
@@ -88,14 +88,14 @@
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="fullName">Prenom</label>
+					<label for="prenom">Prenom</label>
 					<input type="text" name="prenom" class="form-control" id="prenom" placeholder="Entrer nom complet">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="nom">Nom</label>
-					<input type="text" name="nom" class="form-control" id="nom" placeholder="Entrer email ID">
+					<input type="text" name="nom" class="form-control" id="nom" placeholder="Entrer nom">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -106,8 +106,8 @@
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="website">Naissance</label>
-					<input type="date" name="birthday" class="form-control" id="birthday" placeholder="birthday">
+					<label for="birthday">Naissance</label>
+					<input type="text" name="birthday" class="form-control" id="birthday" placeholder="YY-MM-JJ">
 				</div>
 			</div>
 		</div>

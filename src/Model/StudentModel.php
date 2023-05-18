@@ -12,32 +12,32 @@ class StudentModel extends Model
         $result = $this->db->getPDO()->query($sql);
         return $result;
     }
-    public function getStudent($id)
+    public function getAllStudents()
     {
-        $sql = "SELECT * FROM students WHERE id = $id";
-        $result = $this->db->getPDO()->query($sql);
-        return $result;
+        $sql = "SELECT * FROM students";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function addStudent($prenom, $nom,$numero,$birthday)
+    public function insertStudent($prenom, $nom, $numero, $birthday)
     {
-        $sql = "INSERT INTO students (prenom, nom, numero, birthday) VALUES ('$prenom', '$nom' , '$numero', $birthday)";
-        try {
-            $result = $this->db->getPDO()->query($sql);
-            return $result;
-        } catch(\PDOException $e) {
-            echo $e->getMessage();
-        }
+        $sql = "INSERT INTO students (prenom, nom, numero, birthday) VALUES (?, ?, ?, ?)";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$prenom, $nom, $numero, $birthday]);
+        return $stmt->rowCount(); // Retourne le nombre de lignes insérées
     }
-    public function editStudent($id, $prenom, $nom, $numero,$birthday)
+    public function updateStudent($id, $prenom, $nom, $numero, $birthday)
     {
-        $sql = "UPDATE students SET prenom = '$prenom', nom = '$nom', numero = '$numero', birthday = '$birthday' WHERE id = $id";
-        $result = $this->db->getPDO()->query($sql);
-        return $result;
+        $sql = "UPDATE students SET prenom = ?, nom = ?, numero = ?, birthday = ? WHERE id = ?";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$prenom, $nom, $numero, $birthday, $id]);
+        return $stmt->rowCount();
     }
+
     public function deleteStudent($id)
     {
-        $sql = "DELETE FROM students WHERE id = $id";
-        $result = $this->db->getPDO()->query($sql);
-        return $result;
+        $sql = "DELETE FROM students WHERE id = ?";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->rowCount();
     }
 }
