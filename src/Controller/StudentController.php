@@ -38,16 +38,6 @@ class StudentController extends Controller
             'title' => 'Annee',
         ]);
     }
-    public function addAnnee(){
-        $this->render('AddAnnee.php', [
-            'Styles' => 'styles/Add.css'
-        ]);
-    }
-    public function addClass(){
-        $this->render('AddClass.php', [
-            'Styles' => 'styles/Add.css'
-        ]);
-    }
     public function classe(){
         $this->render('Classe.php', [
             'title' => 'Classe',

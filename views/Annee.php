@@ -67,8 +67,12 @@
 
             <h6 class="mb-3">Anne Scolaire</h6>
 
-            <form class="d-flex align-items-center mb-4">
-              <a  href="/addannee"type="submit" class="btn btn-primary btn-lg ms-2">Add</a>
+            <form action="/annee" method="post" class="d-flex align-items-end mb-4">
+            <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Libelle</label>
+                    <input type="text" name="libelle" class="form-control" required style="width:450px">
+                </div>
+              <input type="submit" value="Add" class="btn btn-primary btn-lg ms-2">
             </form>
 
             <ul class="list-group mb-0">

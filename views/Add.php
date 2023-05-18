@@ -75,12 +75,12 @@
             </div>
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Naissance</label>
-                    <input type="date" name="birthday" class="form-control" required>
-                </div>
-                <div class="col-md-6 mt-md-0 mt-3">
                     <label>Numero</label>
                     <input type="number" name="numero" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>birthday</label>
+                    <input type="date" name="birthday" class="form-control" required>
                 </div>
                 
             </div>

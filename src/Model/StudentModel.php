@@ -20,9 +20,13 @@ class StudentModel extends Model
     }
     public function addStudent($prenom, $nom,$numero,$birthday)
     {
-        $sql = "INSERT INTO students (prenom, nom, numero, birthday) VALUES ('$prenom', '$nom , '$numero', $birthday)";
-        $result = $this->db->getPDO()->query($sql);
-        return $result;
+        $sql = "INSERT INTO students (prenom, nom, numero, birthday) VALUES ('$prenom', '$nom' , '$numero', $birthday)";
+        try {
+            $result = $this->db->getPDO()->query($sql);
+            return $result;
+        } catch(\PDOException $e) {
+            echo $e->getMessage();
+        }
     }
     public function editStudent($id, $prenom, $nom, $numero,$birthday)
     {
