@@ -67,7 +67,7 @@
           <div class="card-header p-3">
             <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Liste Des Eleves Breukh School</h5>
           </div>
-          <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px">
+          <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px;  overflow: scroll;">
 
             <table class="table mb-0">
               <thead>
@@ -189,6 +189,26 @@
                         class="fas fa-trash-alt text-danger"></i></a>
                   </td>
                 </tr>
+                <?php foreach($params['students'] as $tab): ?>
+                  <tr class="fw-normal">
+                  <th class="border-0">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
+                      class="shadow-1-strong rounded-circle" alt="avatar 1"
+                      style="width: 55px; height: auto;">
+                    <span class="ms-2"><?= $tab['prenom']?></span>
+                  </th>
+                  <td class="border-0 align-middle"><?= $tab['birthday']?></td>
+                  <td class="border-0 align-middle">
+                    <h6 class="mb-0"><span class="badge bg-success"><?= $tab['numero']?></span></h6>
+                  </td>
+                  <td class="border-0 align-middle">
+                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
+                        class="fa-solid fa-file-pen text-success me-3"></i></a>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                        class="fas fa-trash-alt text-danger"></i></a>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
 

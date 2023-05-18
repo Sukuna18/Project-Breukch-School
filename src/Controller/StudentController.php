@@ -9,9 +9,12 @@ class StudentController extends Controller
 {
     public function index()
     {
+        $studentModel = new StudentModel();
+        $students = $studentModel->getAllStudents();
      $this->render('StudentList.php', [
 
-        'Styles' => 'styles/StudentList.css'
+        'Styles' => 'styles/StudentList.css',
+        'students' => $students
     ]);
 
     }
@@ -29,12 +32,8 @@ class StudentController extends Controller
     }
     public function add()
     {
-        $studentModel = new StudentModel();
-        $rowCount = $studentModel->getAllStudents();
         $this->render('Add.php', [
             'Styles' => 'styles/Add.css',
-            'rowCount' => $rowCount
-
         ]);
     }
     public function Annee(){
