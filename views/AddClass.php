@@ -59,30 +59,15 @@
 <!-- Navbar -->
 <div class="wrapper rounded bg-white">
 
-        <div class="h3">Formulaire d'Enregistrement Eleves</div>
+        <div class="h3">Formulaire d'Enregistrement Classe</div>
 
         <div class="form">
             <form action="/list" method="post">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Prenom</label>
-                    <input type="text" name="prenom" class="form-control" required>
+                    <label>Libelle</label>
+                    <input type="text" name="libelle" class="form-control" required style="width:700px">
                 </div>
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Nom</label>
-                    <input type="text" name="nom" class="form-control" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Naissance</label>
-                    <input type="date" name="birthday" class="form-control" required>
-                </div>
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Numero</label>
-                    <input type="number" name="numero" class="form-control" required>
-                </div>
-                
             </div>
             <!-- <div class=" my-md-2 my-3">
                 <label>Classe</label>

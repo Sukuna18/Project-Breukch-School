@@ -1,10 +1,16 @@
-<div class="container">
-    		<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div>
+	<li class="nav-item" style="display: flex; align-items: center;">
+          <a class="nav-link d-flex align-items-center me-3" href="/">
+		  <i class="fa-solid fa-right-from-bracket"></i>&nbsp;Se deconnecter
+          </a>
+        </li>
+	</div>
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="/list"><img id="MDB-logo"
+    <a class="navbar-brand" href="#"><img id="MDB-logo"
         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo"
         draggable="false" height="30" /></a>
 
@@ -18,17 +24,30 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left links -->
-      <ul class="navbar-nav me-3">
-        <li class="nav-item">
-          <a class="nav-link active d-flex align-items-center" aria-current="page" href="#"><i
-              class="fas fa-bars pe-2"></i>Menu</a>
-        </li>
-      </ul>
+      
       <!-- Left links -->
+
+      <form class="d-flex align-items-center w-100 form-search">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
+        </div>
+        <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
+      </form>
+
       <ul class="navbar-nav ms-3">
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center me-3" href="/list">
-            <i class="fas fa-bookmark pe-2"></i> Listes
+            <i class="fas fa-bookmark pe-2"></i>Liste
+          </a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link d-flex align-items-center me-2" href="/class">
+		  <i class="fa-solid fa-landmark pe-2"></i>Classes
+          </a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link d-flex align-items-center me-3" href="/annee">
+		  <i class="fa-solid fa-calendar-days pe-2"></i>Annee
           </a>
         </li>
       </ul>
@@ -38,6 +57,7 @@
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
+<div class="container" style="margin-top:7%">	
 <div class="row gutters">
 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
 <div class="card h-100">
@@ -61,60 +81,45 @@
 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 <div class="card h-100">
 	<div class="card-body">
+		<form action="/list" method="post">
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<h6 class="mb-2 text-primary">Infos eleve</h6>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="fullName">Nom complet</label>
-					<input type="text" class="form-control" id="nomcomplet" placeholder="Entrer nom complet">
+					<label for="fullName">Prenom</label>
+					<input type="text" name="prenom" class="form-control" id="prenom" placeholder="Entrer nom complet">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="eMail">Email</label>
-					<input type="email" class="form-control" id="eMail" placeholder="Entrer email ID">
+					<label for="nom">Nom</label>
+					<input type="text" name="nom" class="form-control" id="nom" placeholder="Entrer email ID">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="phone">Telephone</label>
-					<input type="text" class="form-control" id="phone" placeholder="Enter numero Telephone">
+					<label for="numero">Numero Matricule</label>
+					<input type="text" name="numero" class="form-control" id="numero" placeholder="Enter numero">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="website">Classe</label>
-					<input type="url" class="form-control" id="classe" placeholder="Classe">
+					<label for="website">Naissance</label>
+					<input type="date" name="birthday" class="form-control" id="birthday" placeholder="birthday">
 				</div>
 			</div>
 		</div>
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<h6 class="mt-3 mb-2 text-primary">Adresse</h6>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="rue">Rue</label>
-					<input type="name" class="form-control" id="Street" placeholder="Enter Street">
-				</div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="cni">CNI</label>
-					<input type="text" class="form-control" id="zIp" placeholder="CNI">
+				<div class="text-right" style="margin-top: 60px; margin:20% 0 0 40%;">
+					<input type="submit" id="input" value="Annuler" class="btn btn-secondary">
+					<input type="submit" id="input" value="Confirmer"  class="btn btn-primary">
 				</div>
 			</div>
 		</div>
-		<div class="row gutters">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<div class="text-right" style="margin-top: 60px; margin-left: 40%;">
-					<button type="button" id="submit" name="submit" class="btn btn-secondary">Annuler</button>
-					<button type="button" id="submit" name="submit" class="btn btn-primary">Confirmer</button>
-				</div>
-			</div>
-		</div>
+		</form>
 	</div>
 </div>
 </div>

@@ -21,13 +21,13 @@
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control" />
-              <label class="form-label" for="form3Example3">Email address</label>
+              <input type="number" name="phone" id="form3Example3" class="form-control" />
+              <label class="form-label" for="form3Example3">Telephone</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form3Example4" class="form-control" />
+              <input type="password" name="password" id="form3Example4" class="form-control" />
               <label class="form-label" for="form3Example4">Password</label>
             </div>
 

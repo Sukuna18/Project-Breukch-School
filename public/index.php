@@ -11,5 +11,9 @@ $app->router->get('/','StudentController@Login');
 $app->router->post('/list','StudentController@index');
 $app->router->get('/edit','StudentController@edit');
 $app->router->get('/add','StudentController@add');
+$app->router->get('/annee','StudentController@Annee');
+$app->router->get('/class','StudentController@Classe');
+$app->router->get('/addclass','StudentController@addClass');
+$app->router->get('/addannee','StudentController@addAnnee');
 
 $app->run();

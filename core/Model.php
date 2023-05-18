@@ -8,6 +8,6 @@ class Model
 
     public function __construct()
     {
-        $this->db = new Database('mysql:dbname=Gestion_commerciale;dbhost=localhost', 'root', 'sukuna');
+        $this->db = new Database('mysql:dbname=Gestion_school;dbhost=localhost', 'root', 'sukuna');
     }
 }
