@@ -62,7 +62,7 @@ class StudentController extends Controller
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];
         $birthday = $_POST['birthday'];
-        $this->studentModel->updateStudent($id, $prenom, $nom,$birthday);
+        $this->studentModel->updateStudent($id, $prenom, $nom, $birthday);
         header('Location: /list');
 
     }
