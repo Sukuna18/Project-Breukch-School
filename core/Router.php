@@ -42,6 +42,8 @@ class Router
 
     public function checkRoute($pathServer, $pathUser)
     {
+        // remove query params
+        $pathUser = explode('?', $pathUser)[0];
         $pathServer = preg_replace('#:([\w]+)#', '([^/]+)', $pathServer);
         $pathRegex = "#^$pathServer$#";
 
@@ -60,7 +62,6 @@ class Router
 
         $controller = new $class();
         $method = $params[1];
-
-        isset($this->pathParams[1]) ? $controller->$method($this->pathParams) : $controller->$method();
+         $controller->$method($this->pathParams);
     }
 }

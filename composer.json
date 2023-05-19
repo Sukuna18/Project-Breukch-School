@@ -7,7 +7,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "symfony/var-dumper": "6.3.x-dev"
+  "symfony/var-dumper": "6.3.x-dev"
   },
   "autoload": {
     "psr-4": {

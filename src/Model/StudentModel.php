@@ -6,15 +6,15 @@ use Core\Model;
 
 class StudentModel extends Model
 {
-        public function getStudents()
+        public function getStudentsId($id)
     {
-        $sql = "SELECT * FROM students";
-        $result = $this->db->getPDO()->query($sql);
-        return $result;
+        $sql = "SELECT * FROM students WHERE id = $id";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
     }
     public function getAllStudents()
     {
-        $sql = "SELECT * FROM students";
+        $sql = "SELECT * FROM students ORDER BY prenom ASC ";
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
@@ -23,13 +23,13 @@ class StudentModel extends Model
         $sql = "INSERT INTO students (prenom, nom, numero, birthday) VALUES (?, ?, ?, ?)";
         $stmt = $this->db->getPDO()->prepare($sql);
         $stmt->execute([$prenom, $nom, $numero, $birthday]);
-        return $stmt->rowCount(); // Retourne le nombre de lignes insérées
+        return $stmt->rowCount();
     }
-    public function updateStudent($id, $prenom, $nom, $numero, $birthday)
+    public function updateStudent($id, $prenom, $nom, $birthday)
     {
-        $sql = "UPDATE students SET prenom = ?, nom = ?, numero = ?, birthday = ? WHERE id = ?";
+        $sql = "UPDATE students SET prenom = ?, nom = ?, birthday = ? WHERE id = ?";
         $stmt = $this->db->getPDO()->prepare($sql);
-        $stmt->execute([$prenom, $nom, $numero, $birthday, $id]);
+        $stmt->execute([$prenom, $nom, $birthday, $id]);
         return $stmt->rowCount();
     }
 

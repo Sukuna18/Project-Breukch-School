@@ -74,138 +74,26 @@
                 <tr>
                   <th scope="col">Eleve</th>
                   <th scope="col">Naissance</th>
-                  <th scope="col">Numero</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1"
-                      style="width: 55px; height: auto;">
-                    <span class="ms-2">Alice Mayer</span>
-                  </th>
-                  <td class="align-middle">
-                    <span>2023-05-18</span>
-                  </td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">1000</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
-                        class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1"
-                      style="width: 55px; height: auto;">
-                    <span class="ms-2">Kate Moss</span>
-                  </th>
-                  <td class="align-middle">2023-05-18</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">1001</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
-                        class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1"
-                      style="width: 55px; height: auto;">
-                    <span class="ms-2">Danny McChain</span>
-                  </th>
-                  <td class="align-middle">2023-05-18</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">1003</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
-                        class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1"
-                      style="width: 55px; height: auto;">
-                    <span class="ms-2">Alexa Chung</span>
-                  </th>
-                  <td class="align-middle">2023-05-18</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">1004</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
-                        class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th class="">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1"
-                      style="width: 55px; height: auto;">
-                    <span class="ms-2">Ben Smith</span>
-                  </th>
-                  <td class="align-middle">2023-05-18</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">1005</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
-                        class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th class="border-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1"
-                      style="width: 55px; height: auto;">
-                    <span class="ms-2">Annie Hall</span>
-                  </th>
-                  <td class="border-0 align-middle">2023-05-18</td>
-                  <td class="border-0 align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">1006</span></h6>
-                  </td>
-                  <td class="border-0 align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
-                        class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
+              
+                
+                
                 <?php foreach($params['students'] as $tab): ?>
                   <tr class="fw-normal">
                   <th class="border-0">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
                       class="shadow-1-strong rounded-circle" alt="avatar 1"
                       style="width: 55px; height: auto;">
-                    <span class="ms-2"><?= $tab['prenom']?></span>
+                    <span class="ms-2"><?= $tab['prenom']?>&nbsp;<?= $tab['nom']?></span>
                   </th>
                   <td class="border-0 align-middle"><?= $tab['birthday']?></td>
                   <td class="border-0 align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success"><?= $tab['numero']?></span></h6>
-                  </td>
-                  <td class="border-0 align-middle">
-                    <a href="/edit" data-mdb-toggle="tooltip" title="Edit"><i
+                    <a href="edit/<?= $tab['id']?>"  data-mdb-toggle="tooltip" title="Edit"><i
                         class="fa-solid fa-file-pen text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Remove">
                   </td>
                 </tr>
                 <?php endforeach; ?>

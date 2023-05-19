@@ -136,6 +136,7 @@
                   <i class="fas fa-times text-primary"></i>
                 </a>
               </li>
+             
             </ul>
 
           </div>
