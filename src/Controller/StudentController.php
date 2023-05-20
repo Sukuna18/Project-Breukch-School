@@ -14,14 +14,14 @@ class StudentController extends Controller
     public function index()
     {
         $students = $this->studentModel->getAllStudents();
-        $this->render('StudentList.php', [
+        $this->render('Students/StudentList.php', [
             'Styles' => 'styles/StudentList.css',
             'students' => $students
         ]);
     }
     public function login()
     {
-        $this->render('Login.php', [
+        $this->render('Students/Login.php', [
             'title' => 'Login',
         ]);
     }
@@ -29,7 +29,7 @@ class StudentController extends Controller
     {
         $id = $params[0];
         $student = $this->studentModel->getStudentsId($id);
-        $this->render('Edit.php', [
+        $this->render('Students/Edit.php', [
             'Styles' => 'styles/Edit.css',
             'student' => $student
 
@@ -37,7 +37,7 @@ class StudentController extends Controller
     }
     public function add()
     {
-        $this->render('Add.php', [
+        $this->render('Students/Add.php', [
             'Styles' => 'styles/Add.css',
         ]);
     }

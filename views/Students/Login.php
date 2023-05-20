@@ -17,7 +17,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
           <h2 class="fw-bold mb-5">Breukh'S School</h2>
-          <form action="/list" method="post">
+          <!-- <form action="/list" method="post"> -->
 
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -40,10 +40,8 @@
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">
-              Se connecter
-            </button>
-          </form>
+           <a href="/list" class="btn btn-primary">Se Connecter</a>
+          <!-- </form> -->
         </div>
       </div>
     </div>

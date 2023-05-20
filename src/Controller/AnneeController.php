@@ -7,7 +7,7 @@ use App\Model\AnneeModel;
 class AnneeController extends Controller
 {
    public function annee(){
-         $this->render('Annee.php', [
+         $this->render('AnneeScholaire/Annee.php', [
               'title' => 'Classe',
          ]);
    }

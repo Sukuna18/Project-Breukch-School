@@ -15,7 +15,7 @@ class ClasseController extends Controller
       public function index()
       {
             $classes = $this->classeModel->getAllClasses();
-            $this->render('Classe.php', [
+            $this->render('Classe/Classe.php', [
             'title' => 'Classe',
             'classes' => $classes
             ]);
