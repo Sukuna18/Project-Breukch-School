@@ -7,9 +7,43 @@ use App\Model\ClasseModel;
 
 class ClasseController extends Controller
 {
-   public function class(){
-         $this->render('Classe.php', [
-              'title' => 'Classe',
-         ]);
-   }
+      private $classeModel;
+     public function __construct()
+      {
+          $this->classeModel = new ClasseModel();
+      }
+      public function index()
+      {
+            $classes = $this->classeModel->getAllClasses();
+            $this->render('Classe.php', [
+            'title' => 'Classe',
+            'classes' => $classes
+            ]);
+      }
+      public function addClasse()
+      {
+          $libelle = $_POST['libelle'];
+          $classe = $this->classeModel->insertClasse($libelle);
+          $rowCount = $classe;
+  
+          if ($rowCount > 0) {
+              header('Location: /class');
+              exit();
+          } else {
+              echo "Erreur lors de l'ajout de la classe.";
+          }
+      }     
+      public function deleteClasse($params)
+      {
+          $id = $params[0];
+          $classe = $this->classeModel->deleteClasse($id);
+          $rowCount = $classe;
+  
+          if ($rowCount > 0) {
+              header('Location: /class');
+              exit();
+          } else {
+              echo "Erreur lors de la suppression de la classe.";
+          }
+      }
 }

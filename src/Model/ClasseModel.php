@@ -5,15 +5,9 @@
 
     class ClasseModel extends Model
     {
-        public function getClasses()
-        {
-            $sql = "SELECT * FROM Classes";
-            $result = $this->db->getPDO()->query($sql);
-            return $result;
-        }
         public function getAllClasses()
         {
-            $sql = "SELECT * FROM classes";
+            $sql = "SELECT * FROM Classes";
             $stmt = $this->db->getPDO()->query($sql);
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
@@ -26,7 +20,7 @@
         }
         public function updateClasse($id, $nom, $annee)
         {
-            $sql = "UPDATE classes SET nom = ?, annee = ? WHERE id = ?";
+            $sql = "UPDATE Classes SET nom = ?, annee = ? WHERE id_classe = ?";
             $stmt = $this->db->getPDO()->prepare($sql);
             $stmt->execute([$nom, $annee, $id]);
             return $stmt->rowCount();
@@ -34,7 +28,7 @@
 
         public function deleteClasse($id)
         {
-            $sql = "DELETE FROM classes WHERE id = ?";
+            $sql = "DELETE FROM Classes WHERE id_classe = ?";
             $stmt = $this->db->getPDO()->prepare($sql);
             $stmt->execute([$id]);
             return $stmt->rowCount();

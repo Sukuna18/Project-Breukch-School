@@ -69,73 +69,25 @@
 
             <form action="/class" method="post" class="d-flex align-items-end mb-4">
             <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Libelle</label>
+                    <label for="libelle">Libelle</label>
                     <input type="text" name="libelle" class="form-control" required style="width:450px">
                 </div>
               <input type="submit" value="Add" class="btn btn-primary btn-lg ms-2">
             </form>
 
             <ul class="list-group mb-0">
+            <?php foreach ($params['classes'] as $classe) : ?> 
+              <form action="/class/<?= $classe['id_classe'];?>" method="get">
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
                 <div class="d-flex align-items-center">
                   
-                  6eme A
+                    <?= $classe['libelle'] ?>
                 </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
+                <button type="submit" class="btn btn-danger">Delete</button>
               </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                 
-                  5eme B
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                  
-                    4eme C
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                  
-                    3eme D
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-0">
-                <div class="d-flex align-items-center">
-                 
-                    2nde A
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                  
-                    1ere C
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
+              </form>
+              <?php endforeach; ?>
              
             </ul>
 
