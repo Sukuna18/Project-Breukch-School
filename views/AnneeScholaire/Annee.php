@@ -65,7 +65,7 @@
         <div class="card" style="border-radius: 15px;">
           <div class="card-body p-5">
 
-            <h6 class="mb-3">Anne Scolaire</h6>
+            <h6 class="mb-3">Annee Scolaire</h6>
 
             <form action="/annee" method="post" class="d-flex align-items-end mb-4">
             <div class="col-md-6 mt-md-0 mt-3">
@@ -76,66 +76,18 @@
             </form>
 
             <ul class="list-group mb-0">
+            <?php foreach ($params['annees'] as $annee) : ?> 
+              <form action="/annee/<?= $annee['id_annee_scolaire'];?>" method="get">
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
                 <div class="d-flex align-items-center">
                   
-                  2021-2022
+                    <?= $annee['libelle'] ?>
                 </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
+                <button type="submit" class="btn btn-danger">Delete</button>
               </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                 
-                    2020-2021
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                  
-                    2019-2020
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                  
-                    2018-2019
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-0">
-                <div class="d-flex align-items-center">
-                 
-                    2017-2018
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                <div class="d-flex align-items-center">
-                  
-                    2016-2017
-                </div>
-                <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                  <i class="fas fa-times text-primary"></i>
-                </a>
-              </li>
+              </form>
+              <?php endforeach; ?>
             </ul>
 
           </div>

@@ -5,6 +5,14 @@ use Core\Model;
 
 class AnneeModel extends Model{
 
+    public function getAnneeById($id)
+    {
+        $sql = "SELECT * FROM Annees_scolaires WHERE id_annee_scolaire = ?";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function getAllAnnees()
     {
         $sql = "SELECT * FROM Annees_scolaires";
@@ -18,11 +26,18 @@ class AnneeModel extends Model{
         $stmt->execute([$libelle]);
         return $stmt->rowCount();
     }
-    public function updateAnnee($id, $nom, $annee)
+    public function updateAnnee($id, $libelle)
     {
-        $sql = "UPDATE Annees_scolaires SET nom = ?, annee = ? WHERE id_annee_scolaire = ?";
+        $sql = "UPDATE Annees_scolaires SET libelle = ? WHERE id_annee_scolaire = ?";
         $stmt = $this->db->getPDO()->prepare($sql);
-        $stmt->execute([$nom, $annee, $id]);
+        $stmt->execute([$libelle, $id]);
+        return $stmt->rowCount();
+    }
+    public function deleteAnnee($id)
+    {
+        $sql = "DELETE FROM Annees_scolaires WHERE id_annee_scolaire = ?";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
         return $stmt->rowCount();
     }
 

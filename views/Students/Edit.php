@@ -69,6 +69,7 @@
 				</div>
 				<h5 class="user-name"><?= $params['student']['prenom']; $params['student']['nom']; ?></h5>
 				<h6 class="user-email"><?= $params['student']['birthday'];?></h6>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, quia! Velit sint nulla repellat beatae. Impedit repellendus vitae unde eaque.</p>
 			</div>
 			<form action="/delete/<?= $params['student']['id']?>" method="get">
 			<div class="form-group" style="display: flex; justify-content: center;">
