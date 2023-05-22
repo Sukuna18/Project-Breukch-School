@@ -40,6 +40,31 @@ class AnneeModel extends Model{
         $stmt->execute([$id]);
         return $stmt->rowCount();
     }
+    public function activeAnnee($id)
+    {
+        
+        $activeAnnee = $this->getAnneeActive();
+        if ($activeAnnee) {
+            $this->disableAnnee($activeAnnee['id_annee_scolaire']);
+        }
+        $sql = "UPDATE Annees_scolaires SET active = 1 WHERE id_annee_scolaire = ?";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->rowCount();
+    }
+    public function disableAnnee($id)
+    {
+        $sql = "UPDATE Annees_scolaires SET active = 0 WHERE id_annee_scolaire = ?";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->rowCount();
+    }
+    public function getAnneeActive()
+    {
+        $sql = "SELECT * FROM Annees_scolaires WHERE active = 1";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
 
     
 
