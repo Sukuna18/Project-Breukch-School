@@ -83,14 +83,14 @@
 		                      <?php if($annee['active'] == 0) :?>
 													<span class="badge bg-danger rounded-pill">Inactive</span>
 												<?php else : ?>
-													<span class="badge bg-success rounded-pill" style="margin-right: 70px;">Active</span>
+													<span class="badge bg-success rounded-pill" style="margin-right: 140px;">Active</span>
 												<?php endif ?>
 		                    </div>
                         <div>
 													<?php if ($annee['active'] == 0) : ?>
                         <a href="/annee/active/<?= $annee['id_annee_scolaire']; ?>" class="btn btn-success">Active</a>
+												<a href="/annee/<?= $annee['id_annee_scolaire']; ?>" class="btn btn-danger">Delete</a>
 													<?php endif ?>
-		                    <a href="/annee/<?= $annee['id_annee_scolaire']; ?>" class="btn btn-danger">Delete</a>
                         </div>
 		                  </li>
 		              <?php endforeach; ?>

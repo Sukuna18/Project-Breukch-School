@@ -76,15 +76,47 @@
             </div>
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label for="numero">Numero</label>
-                    <input type="number" name="numero" class="form-control" placeholder="numero" required>
+                    <label for="birthday">Date de naissance</label>
+                    <input type="text" name="birthday" class="form-control" placeholder="YYYY-MM-DD" required>
                 </div>
                 <div class="col-md-6 mt-md-0 mt-3">
-                    <label for="birthday">birthday</label>
-                    <input type="text" name="birthday" class="form-control" id="birthday" placeholder="YYYY-MM-DD" required>
+                    <label for="lieu">lieu de naissance</label>
+                    <input type="text" name="lieu" class="form-control" id="birthday" placeholder="lieu de naissance" >
 
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label for="numero">Numero</label>
+                    <input type="number" name="numero" class="form-control" id="birthday" placeholder="numero" required>
+                </div>
                 
+                <div class="col-md-6 mt-md-0 mt-3">
+                  <label for="">Sexe</label>
+                <input type="radio" name="sexe" value="M"  > garcon
+                <input style="display: inline;" type="radio" name="sexe" value="F"> fille
+                </div>
+
+            </div>
+            <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+              <label for="niveau">Niveau</label>
+              <select class="form-select" name="niveau" id="niveau" aria-label="Default select example">
+                <option selected>Niveau</option>
+                <option value="elementaire">Elementaire</option>
+                <option value="2">2eme annee</option>
+                <option value="3">3eme annee</option>
+              </select>
+            </div>
+            <div class="col-md-6 mt-md-0 mt-3">
+              <label for="classe">Classes</label>
+              <select class="form-select" id="classe" name="niveau" aria-label="Default select example">
+                <option selected>Classes</option>
+                <option value="6eme">Elementaire</option>
+                <option value="2nd">2eme annee</option>
+                <option value="4eme">3eme annee</option>
+              </select>
+            </div>
             </div>
             <input type="submit" value="Enregistrer" class="btn btn-primary mt-3" style="margin-left:40%;"  >
             </form>
@@ -94,4 +126,4 @@
 
 
     </div>
-   
+   <script src="/js/add.js"></script>

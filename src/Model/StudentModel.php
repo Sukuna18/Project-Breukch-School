@@ -18,18 +18,18 @@ class StudentModel extends Model
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function insertStudent($prenom, $nom, $numero, $birthday)
+    public function insertStudent($prenom, $nom, $numero, $birthday, $naissance, $sexe)
     {
-        $sql = "INSERT INTO students (prenom, nom, numero, birthday) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO students (prenom, nom, numero, birthday, lieu_naissance, sexe) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->db->getPDO()->prepare($sql);
-        $stmt->execute([$prenom, $nom, $numero, $birthday]);
+        $stmt->execute([$prenom, $nom, $numero, $birthday, $naissance, $sexe]);
         return $stmt->rowCount();
     }
-    public function updateStudent($id, $prenom, $nom, $birthday)
+    public function updateStudent($id, $prenom, $nom, $birthday, $naissance, $sexe)
     {
-        $sql = "UPDATE students SET prenom = ?, nom = ?, birthday = ? WHERE id = ?";
+        $sql = "UPDATE students SET prenom = ?, nom = ?, birthday = ?, lieu_naissance = ?, sexe = ? WHERE id = ?";
         $stmt = $this->db->getPDO()->prepare($sql);
-        $stmt->execute([$prenom, $nom, $birthday, $id]);
+        $stmt->execute([$prenom, $nom, $birthday, $naissance, $sexe, $id]);
         return $stmt->rowCount();
     }
 

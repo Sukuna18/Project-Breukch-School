@@ -47,11 +47,13 @@ class StudentController extends Controller
         $nom = $_POST['nom'];
         $numero = $_POST['numero'];
         $birthday = $_POST['birthday'];
-        $student = $this->studentModel->insertStudent($prenom, $nom, $numero, $birthday);
+        $naissance = $_POST['lieu'];
+        $sexe = $_POST['sexe'];
+        $student = $this->studentModel->insertStudent($prenom, $nom, $numero, $birthday, $naissance, $sexe);
         $rowCount = $student;
 
         if ($rowCount > 0) {
-            header('Location: /list');
+            header('Location: /add');
             exit();
         } else {
             echo "Erreur lors de l'ajout de l'étudiant.";
@@ -62,7 +64,9 @@ class StudentController extends Controller
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];
         $birthday = $_POST['birthday'];
-        $this->studentModel->updateStudent($id, $prenom, $nom, $birthday);
+        $naissance = $_POST['lieu'];
+        $sexe = $_POST['sexe'];
+        $this->studentModel->updateStudent($id, $prenom, $nom, $birthday, $naissance, $sexe);
         header('Location: /list');
 
     }

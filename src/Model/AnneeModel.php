@@ -15,7 +15,7 @@ class AnneeModel extends Model{
 
     public function getAllAnnees()
     {
-        $sql = "SELECT * FROM Annees_scolaires";
+        $sql = "SELECT * FROM Annees_scolaires ORDER BY id_annee_scolaire DESC";
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
