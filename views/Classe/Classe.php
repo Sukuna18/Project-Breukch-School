@@ -57,7 +57,7 @@
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-<section class="vh-100" style="background-color: #e2d5de;">
+<section class="vh-100" style="background-color: #e2d5de;overflow:scroll;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">

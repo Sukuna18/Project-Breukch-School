@@ -28,16 +28,16 @@ class AnneeController extends Controller
         try {
             $libelle = $_POST['libelle'];
             if (!$this->validator->verifierFormatDate($libelle)) {
-                session_start();
-                $_SESSION['erreur'] = "Date invalide";
+                $error = "Date invalide";
+                $this->sessionStart($error);
                 $this->redirect('/annee');
                 exit();
             }
             $this->anneeModel->insertAnnee($libelle);
             $this->redirect('/annee');
         } catch (PDOException $e) {
-            session_start();
-            $_SESSION['erreur1'] = "Date doit etre unique";
+            $error = "la date doit etre unique";
+            $this->sessionStart($error);
             $this->redirect('/annee');
         }
     }

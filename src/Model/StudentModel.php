@@ -6,7 +6,7 @@ use Core\Model;
 
 class StudentModel extends Model
 {
-        public function getStudentsId($id)
+    public function getStudentsId($id)
     {
         $sql = "SELECT * FROM students WHERE id = $id";
         $stmt = $this->db->getPDO()->query($sql);
@@ -38,6 +38,14 @@ class StudentModel extends Model
         $sql = "DELETE FROM students WHERE id = ?";
         $stmt = $this->db->getPDO()->prepare($sql);
         $stmt->execute([$id]);
+        return $stmt->rowCount();
+    }
+   
+    public function insertStudentClasse($idStudent, $libelle)
+    {
+        $sql = "INSERT INTO student_classe (id_student, id_classe) VALUES (?, (SELECT id FROM classes WHERE libelle = ?))";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->execute([$idStudent, $libelle]);
         return $stmt->rowCount();
     }
 }
