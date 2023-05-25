@@ -106,16 +106,11 @@
 		        <div class="col-md-6 mt-md-0 mt-3">
 		          <label for="niveau">Niveau</label>
 		          <select class="form-select" name="niveau" id="niveau" aria-label="Default select example">
-		            <option selected>Niveau</option>
-		            <option value="1">Elementaire</option>
-		            <option value="2">Secondaire</option>
-		            <option value="3">Moyen</option>
 		          </select>
 		        </div>
 		        <div class="col-md-6 mt-md-0 mt-3">
 		          <label for="classe">Classes</label>
 		          <select class="form-select" id="classe" name="niveau" aria-label="Default select example">
-              <option selected>Choisir un niveau</option>
 		          </select>
 		        </div>
 		      </div>

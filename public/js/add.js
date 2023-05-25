@@ -1,5 +1,5 @@
-const classes = document.querySelector('#classe');
-const niveau = document.querySelector('#niveau');
+const classeSelect = document.querySelector('#classe');
+const niveauSelect = document.querySelector('#niveau');
 const birthday = document.querySelector('#birthday');
 const submit = document.querySelector('#submit');
 const birthError = document.querySelector('#birth-error');
@@ -10,40 +10,7 @@ const nom = document.querySelector('#nom');
 const prenom = document.querySelector('#prenom');
 const numero = document.querySelector('#numero');
 console.log(birthday);
-const optionsParNiveau = {
-  1: `
-    <option value="CI">CI</option>
-    <option value="CP">CP</option>
-    <option value="CE1">CE1</option>
-    <option value="CE2">CE2</option>
-    <option value="CM1">CM1</option>
-    <option value="CM2">CM2</option>
-  `,
-  2: `
-    <option value="6eme">6eme</option>
-    <option value="5eme">5eme</option>
-    <option value="4eme">4eme</option>
-    <option value="3eme">3eme</option>
-  `,
-  3: `
-    <option value="2nde">2nde</option>
-    <option value="1ere">1ere</option>
-    <option value="Tle">Tle</option>
-  `,
-};
 
-function afficherClasse() {
-  const niveauSelectionne = niveau.value;
-  if(niveau.value === 'Niveau' || classes.value === 'Choisir un niveau') {
-    classes.innerHTML = 'Choisir un niveau';
-    submit.disabled = true;
-    return;
-  }
-  submit.disabled = false;
-  const options = optionsParNiveau[niveauSelectionne] || `<option value="">Choisir un niveau</option>`;
-  classes.innerHTML = options;
-}
-niveau.addEventListener('change', afficherClasse);
 
 function validerFormulaire(event) {
   console.log('validerFormulaire');
@@ -108,4 +75,44 @@ function validerNumero(event) {
 }
 numero.addEventListener('input', validerNumero);
 
+const urlClass = "http://localhost:8000/classjs";
+const urlNiveau = "http://localhost:8000/niveaujs";
 
+async function getNiveaux(){
+  const response = await fetch(urlNiveau);
+  const niveaux = await response.json();
+  console.log(niveaux);
+  return niveaux;
+}
+getNiveaux().then(niveaux => {
+  niveaux.forEach(niveau => {
+    let option = document.createElement('option');
+    option.value = niveau.id_niveau;
+    option.innerHTML = niveau.libelle;
+    niveauSelect.appendChild(option);
+  });
+  renderClass(niveaux[0].id_niveau);
+});
+
+async function getClasses(){
+  const response = await fetch(urlClass);
+  const classes = await response.json();
+  console.log(classes);
+  return classes;
+}
+niveau.addEventListener('change', (event) => {
+  renderClass(event.target.value);
+});
+
+async function renderClass(id){
+  const classes = await getClasses();
+  classeSelect.innerHTML = "";
+  classes.forEach(classe => {
+    if(classe.id_niveau == id){
+      let option = document.createElement('option');
+      option.value = classe.libelle;
+      option.innerHTML = classe.libelle;
+      classeSelect.appendChild(option);
+    }
+  });
+  }

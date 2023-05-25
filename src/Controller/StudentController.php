@@ -90,6 +90,15 @@ class StudentController extends Controller
         $this->studentModel->deleteStudent($id);
         $this->redirect('/list');
     }
+    public function getAllClasses(){
+        $classes = $this->studentModel->getAllClasses();
+        echo json_encode($classes);
+       
+    }
+    public function getAllNiveaux(){
+        $niveaux = $this->studentModel->getAllNiveaux();
+        echo json_encode($niveaux);
+    }
 
     // public function addStudentClasses($params){
     //     $id_student = $params[0];

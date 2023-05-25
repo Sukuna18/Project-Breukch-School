@@ -21,5 +21,7 @@ $app->router->get('/annee', 'AnneeController@index');
 $app->router->post('/annee', 'AnneeController@addAnnee');
 $app->router->get('/annee/:id', 'AnneeController@deleteAnnee');
 $app->router->get('/annee/active/:id', 'AnneeController@activeAnnee');
+$app->router->get('/classjs', 'StudentController@getAllClasses');
+$app->router->get('/niveaujs', 'StudentController@getAllNiveaux');
 
 $app->run();

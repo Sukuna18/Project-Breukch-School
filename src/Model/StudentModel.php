@@ -40,12 +40,24 @@ class StudentModel extends Model
         $stmt->execute([$id]);
         return $stmt->rowCount();
     }
-   
     public function insertStudentClasse($idStudent, $libelle)
     {
-        $sql = "INSERT INTO student_classe (id_student, id_classe) VALUES (?, (SELECT id FROM classes WHERE libelle = ?))";
+        $sql = "INSERT INTO student_classe (id, id_classe) VALUES (?, (SELECT id_classe FROM classes WHERE libelle = ?))";
         $stmt = $this->db->getPDO()->prepare($sql);
         $stmt->execute([$idStudent, $libelle]);
         return $stmt->rowCount();
+    }
+   
+    public function getAllClasses()
+    {
+        $sql = "SELECT libelle, id_niveau FROM Classes";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function getAllNiveaux()
+    {
+        $sql = "SELECT * FROM Niveaux_scolaire";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
