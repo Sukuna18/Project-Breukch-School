@@ -12,10 +12,15 @@ class Controller
         
     }
 
-    public function json(array $data)
+    public function json(array $data, $status = 200, $message = "Success")
     {
         header('Content-type: application/json; charset=utf-8');
-        echo json_encode($data);
+
+        echo json_encode([
+            'data'=> $data,
+            'status' => $status,
+            'message' =>  $message
+    ]);
     }
 
     public function render(string $view, array $params = null)

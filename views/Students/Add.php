@@ -110,7 +110,7 @@
 		        </div>
 		        <div class="col-md-6 mt-md-0 mt-3">
 		          <label for="classe">Classes</label>
-		          <select class="form-select" id="classe" name="niveau" aria-label="Default select example">
+		          <select class="form-select" id="classe" name="classe" aria-label="Default select example">
 		          </select>
 		        </div>
 		      </div>

@@ -12,7 +12,6 @@ $app->router->get('/edit/:id','StudentController@edit');
 $app->router->get('/add','StudentController@add');
 $app->router->get('/class','ClasseController@index');
 $app->router->post('/add','StudentController@addStudent');
-// $app->router->post('/add/:id','StudentController@addStudentClasses');
 $app->router->post('/edit/:id','StudentController@updateStudent');
 $app->router->get('/delete/:id','StudentController@deleteStudent');
 $app->router->post('/class','ClasseController@addClasse');

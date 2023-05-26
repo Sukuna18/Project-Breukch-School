@@ -40,17 +40,17 @@ class StudentModel extends Model
         $stmt->execute([$id]);
         return $stmt->rowCount();
     }
-    public function insertStudentClasse($idStudent, $libelle)
+    public function insertStudentClasse($idStudent, $idClasse)
     {
-        $sql = "INSERT INTO student_classe (id, id_classe) VALUES (?, (SELECT id_classe FROM classes WHERE libelle = ?))";
+        $sql = "INSERT INTO Student_Classe (id, id_classe, id_annee_scolaire) VALUES (?, ?, (SELECT id_annee_scolaire FROM Annees_scolaires WHERE active = 1))";
         $stmt = $this->db->getPDO()->prepare($sql);
-        $stmt->execute([$idStudent, $libelle]);
+        $stmt->execute([$idStudent, $idClasse]);
         return $stmt->rowCount();
     }
    
     public function getAllClasses()
     {
-        $sql = "SELECT libelle, id_niveau FROM Classes";
+        $sql = "SELECT * FROM Classes";
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
@@ -60,4 +60,15 @@ class StudentModel extends Model
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+    public function getLastInsertId(){
+        $sql = "SELECT MAX(id) FROM students";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
+        
+    }
 }
+
+
+
+
+

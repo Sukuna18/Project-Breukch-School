@@ -9,7 +9,6 @@ const numeroError = document.querySelector('#numError');
 const nom = document.querySelector('#nom');
 const prenom = document.querySelector('#prenom');
 const numero = document.querySelector('#numero');
-console.log(birthday);
 
 
 function validerFormulaire(event) {
@@ -40,7 +39,6 @@ function validerNom(event) {
   } else {
     submit.disabled = false;
     nameError.innerHTML = '';
-
   }
 }
 nom.addEventListener('input', validerNom);
@@ -81,8 +79,8 @@ const urlNiveau = "http://localhost:8000/niveaujs";
 async function getNiveaux(){
   const response = await fetch(urlNiveau);
   const niveaux = await response.json();
-  console.log(niveaux);
-  return niveaux;
+  console.log(niveaux.data);
+  return niveaux.data;
 }
 getNiveaux().then(niveaux => {
   niveaux.forEach(niveau => {
@@ -97,8 +95,8 @@ getNiveaux().then(niveaux => {
 async function getClasses(){
   const response = await fetch(urlClass);
   const classes = await response.json();
-  console.log(classes);
-  return classes;
+  console.log(classes.data);
+  return classes.data;
 }
 niveau.addEventListener('change', (event) => {
   renderClass(event.target.value);
@@ -110,7 +108,7 @@ async function renderClass(id){
   classes.forEach(classe => {
     if(classe.id_niveau == id){
       let option = document.createElement('option');
-      option.value = classe.libelle;
+      option.value = classe.id_classe;
       option.innerHTML = classe.libelle;
       classeSelect.appendChild(option);
     }

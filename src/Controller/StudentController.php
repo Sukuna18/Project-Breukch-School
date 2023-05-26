@@ -38,8 +38,10 @@ class StudentController extends Controller
     }
     public function add()
     {
+        $students = $this->studentModel->getAllStudents();
         $this->render('Students/Add.php', [
             'Styles' => 'styles/Add.css',
+            'students'=> $students
         ]);
     }
     public function addStudent()
@@ -57,16 +59,12 @@ class StudentController extends Controller
             $this->redirect('/add');
             exit();
         }
-        $student = $this->studentModel->insertStudent($prenom, $nom, $numero, $birthday, $naissance, $sexe);
-        $rowCount = $student;
-
-        if ($rowCount > 0) {
-            $this->redirect('/add');
-            exit();
-        } else {
-            echo "Erreur lors de l'ajout de l'étudiant.";
-        }
+        $this->studentModel->insertStudent($prenom, $nom, $numero, $birthday, $naissance, $sexe);
+        $lastInsertId = $this->studentModel->getLastInsertId();
+        $this->studentModel->insertStudentClasse($lastInsertId['MAX(id)'], $_POST['classe']);
+        $this->redirect('/list');
         } catch (\PDOException $e) {
+            dump($e);
             $error = "le numero doit etre unique";
             $this->sessionStart($error);
             $this->redirect('/add');
@@ -92,22 +90,12 @@ class StudentController extends Controller
     }
     public function getAllClasses(){
         $classes = $this->studentModel->getAllClasses();
-        echo json_encode($classes);
+        echo $this->json($classes);
        
     }
     public function getAllNiveaux(){
         $niveaux = $this->studentModel->getAllNiveaux();
-        echo json_encode($niveaux);
+        echo $this->json($niveaux);
     }
 
-    // public function addStudentClasses($params){
-    //     $id_student = $params[0];
-    //     $students = $this->studentModel->getStudentsId($id_student);
-    //     $id_classe = $_POST['classe'];
-    //     $this->studentModel->insertStudentClasse($id_student, $id_classe);
-    //     $this->render('Students/Add.php', [
-    //         'student' => $students
-    //     ]);
-    //     $this->redirect('/add');
-    // }
 }
