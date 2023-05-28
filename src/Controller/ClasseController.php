@@ -11,7 +11,16 @@ class ClasseController extends Controller
      public function __construct()
       {
           $this->classeModel = new ClasseModel();
-      }
+        }
+        public function renderClassById($params){
+      
+            $idNiveau = $params[0];
+            $niveauId = $this->classeModel->getClassesByNiveau($idNiveau);
+            $this->render('Classe/ClasseHome.php', [
+                  'Styles' => 'styles/Classes.css',
+                  'niveauId' => $niveauId
+              ]);
+          }
       public function index()
       {
             $classes = $this->classeModel->getAllClasses();
@@ -46,4 +55,5 @@ class ClasseController extends Controller
               echo "Erreur lors de la suppression de la classe.";
           }
       }
+
 }

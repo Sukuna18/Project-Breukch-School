@@ -12,9 +12,11 @@ class StudentController extends Controller
         $this->studentModel = new StudentModel();
         parent::__construct();
     }
-    public function index()
+    public function index($params)
     {
-        $students = $this->studentModel->getAllStudents();
+        $idClasse = $params[0];
+        $students = $this->studentModel->getStudentsByClasse($idClasse);
+        dump($students);
         $this->render('Students/StudentList.php', [
             'Styles' => 'styles/StudentList.css',
             'students' => $students
@@ -38,10 +40,8 @@ class StudentController extends Controller
     }
     public function add()
     {
-        $students = $this->studentModel->getAllStudents();
         $this->render('Students/Add.php', [
             'Styles' => 'styles/Add.css',
-            'students'=> $students
         ]);
     }
     public function addStudent()
@@ -62,7 +62,7 @@ class StudentController extends Controller
         $this->studentModel->insertStudent($prenom, $nom, $numero, $birthday, $naissance, $sexe);
         $lastInsertId = $this->studentModel->getLastInsertId();
         $this->studentModel->insertStudentClasse($lastInsertId['MAX(id)'], $_POST['classe']);
-        $this->redirect('/list');
+        $this->redirect('/add');
         } catch (\PDOException $e) {
             dump($e);
             $error = "le numero doit etre unique";
@@ -97,5 +97,5 @@ class StudentController extends Controller
         $niveaux = $this->studentModel->getAllNiveaux();
         echo $this->json($niveaux);
     }
-
+    
 }

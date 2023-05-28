@@ -27,7 +27,6 @@ class Controller
     {
         ob_start();
         require_once __DIR__ . '/../views/' . $view;
-        isset($params) ?? $params = extract($params);
         $content = ob_get_clean();
         require_once __DIR__ . '/../views/layout.php';
     }

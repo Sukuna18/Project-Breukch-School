@@ -33,4 +33,14 @@
             $stmt->execute([$id]);
             return $stmt->rowCount();
         }
+        public function getClassesByNiveau($idNiveau)
+        {
+            $sql = "SELECT c.* FROM Classes c
+                    INNER JOIN Niveaux_scolaire n ON c.id_niveau = n.id_niveau
+                    WHERE n.id_niveau = :idNiveau";
+            $stmt = $this->db->getPDO()->prepare($sql);
+            $stmt->bindValue(':idNiveau', $idNiveau, \PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        }
     }

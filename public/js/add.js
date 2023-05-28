@@ -73,16 +73,68 @@ function validerNumero(event) {
 }
 numero.addEventListener('input', validerNumero);
 
+// const urlClass = "http://localhost:8000/classjs";
+// const urlNiveau = "http://localhost:8000/niveaujs";
+
+// async function getNiveaux(){
+//   const response = await fetch(urlNiveau);
+//   const niveaux = await response.json();
+//   console.log(niveaux.data);
+//   return niveaux.data;
+// }
+// getNiveaux().then(niveaux => {
+//   niveaux.forEach(niveau => {
+//     let option = document.createElement('option');
+//     option.value = niveau.id_niveau;
+//     option.innerHTML = niveau.libelle;
+//     niveauSelect.appendChild(option);
+//   });
+//   renderClass(niveaux[0].id_niveau);
+// });
+
+// async function getClasses(){
+//   const response = await fetch(urlClass);
+//   const classes = await response.json();
+//   console.log(classes.data);
+//   return classes.data;
+// }
+// niveau.addEventListener('change', (event) => {
+//   renderClass(event.target.value);
+// });
+
+// async function renderClass(id){
+//   const classes = await getClasses();
+//   classeSelect.innerHTML = "";
+//   classes.forEach(classe => {
+//     if(classe.id_niveau == id){
+//       let option = document.createElement('option');
+//       option.value = classe.id_classe;
+//       option.innerHTML = classe.libelle;
+//       classeSelect.appendChild(option);
+//     }
+//   });
+//   }
+
+
+
+
 const urlClass = "http://localhost:8000/classjs";
 const urlNiveau = "http://localhost:8000/niveaujs";
 
-async function getNiveaux(){
-  const response = await fetch(urlNiveau);
-  const niveaux = await response.json();
-  console.log(niveaux.data);
-  return niveaux.data;
+function getNiveaux(callback) {
+  fetch(urlNiveau)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.data);
+      callback(null, data.data);
+    })
+    .catch(error => {
+      console.error(error);
+      callback(error, null);
+    });
 }
-getNiveaux().then(niveaux => {
+
+function renderNiveaux(niveaux) {
   niveaux.forEach(niveau => {
     let option = document.createElement('option');
     option.value = niveau.id_niveau;
@@ -90,27 +142,47 @@ getNiveaux().then(niveaux => {
     niveauSelect.appendChild(option);
   });
   renderClass(niveaux[0].id_niveau);
+}
+
+getNiveaux((error, niveaux) => {
+  if (error) {
+    console.log(error);
+  } else {
+    renderNiveaux(niveaux);
+  }
 });
 
-async function getClasses(){
-  const response = await fetch(urlClass);
-  const classes = await response.json();
-  console.log(classes.data);
-  return classes.data;
+function getClasses(callback) {
+  fetch(urlClass)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.data);
+      callback(null, data.data);
+    })
+    .catch(error => {
+      console.error(error);
+      callback(error, null);
+    });
 }
+
 niveau.addEventListener('change', (event) => {
   renderClass(event.target.value);
 });
 
-async function renderClass(id){
-  const classes = await getClasses();
-  classeSelect.innerHTML = "";
-  classes.forEach(classe => {
-    if(classe.id_niveau == id){
-      let option = document.createElement('option');
-      option.value = classe.id_classe;
-      option.innerHTML = classe.libelle;
-      classeSelect.appendChild(option);
+function renderClass(id) {
+  getClasses((error, classes) => {
+    if (error) {
+      console.log(error);
+    } else {
+      classeSelect.innerHTML = "";
+      classes.forEach(classe => {
+        if (classe.id_niveau == id) {
+          let option = document.createElement('option');
+          option.value = classe.id_classe;
+          option.innerHTML = classe.libelle;
+          classeSelect.appendChild(option);
+        }
+      });
     }
   });
-  }
+}

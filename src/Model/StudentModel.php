@@ -47,7 +47,7 @@ class StudentModel extends Model
         $stmt->execute([$idStudent, $idClasse]);
         return $stmt->rowCount();
     }
-   
+
     public function getAllClasses()
     {
         $sql = "SELECT * FROM Classes";
@@ -60,15 +60,20 @@ class StudentModel extends Model
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function getLastInsertId(){
+    public function getLastInsertId()
+    {
         $sql = "SELECT MAX(id) FROM students";
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
-        
+    }
+    public function getStudentsByClasse($idClasse)
+    {
+        $sql = "SELECT s.* FROM students s
+            INNER JOIN Student_Classe sc ON s.id = sc.id
+            WHERE sc.id_classe = :idClasse";
+        $stmt = $this->db->getPDO()->prepare($sql);
+        $stmt->bindValue(':idClasse', $idClasse, \PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
-
-
-
-
-

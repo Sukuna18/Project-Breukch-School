@@ -1,0 +1,22 @@
+.big-link {
+  display: inline-block;
+  font-size: 24px;
+  padding: 40px;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,161,255,1) 0%, rgba(48,46,185,1) 54%);
+  border-radius: 8px;
+  margin: 40px;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+.menu-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.big-link:hover {
+  background-color: #e9ecef;
+}

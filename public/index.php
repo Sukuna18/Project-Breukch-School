@@ -5,8 +5,9 @@ use Core\Application;
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = new Application();
-
-$app->router->get('/list','StudentController@index');
+$app->router->get('/home', 'NiveauController@index');
+$app->router->get('/classhome/:id', 'ClasseController@renderClassById');
+$app->router->get('/list/:id','StudentController@index');
 $app->router->get('/','StudentController@Login');
 $app->router->get('/edit/:id','StudentController@edit');
 $app->router->get('/add','StudentController@add');
