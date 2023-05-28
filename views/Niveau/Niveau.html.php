@@ -10,7 +10,7 @@
 		  <!-- Container wrapper -->
 		  <div class="container">
 		    <!-- Navbar brand -->
-		    <a class="navbar-brand" href="/list"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
+		    <a class="navbar-brand" href="/home"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
 
 		    <!-- Toggle button -->
 		    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,14 @@
 		</nav>
 		<!-- Navbar -->
     <div class="container menu-contain">
+			
+  <a class="fixed-icon" href="#">
+    <i class="fas fa-plus"></i>
+  </a>
+	
+  <span class="fixed-year">
+    <a href="/annee"><?= $params['annee']['libelle'] ?></a>
+  </span>
     <div class="row justify-content-center">
       <?php foreach($params['niveau'] as $niveau): ?>
       <a class="big-link" href="classhome/<?= $niveau['id_niveau'] ?>"><?= $niveau['libelle']?></a>
@@ -61,7 +69,6 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+  
 
 

@@ -10,7 +10,7 @@
 		  <!-- Container wrapper -->
 		  <div class="container">
 		    <!-- Navbar brand -->
-		    <a class="navbar-brand" href="/list"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
+		    <a class="navbar-brand" href="/home"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
 
 		    <!-- Toggle button -->
 		    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,8 +32,8 @@
 
 		      <ul class="navbar-nav ms-3">
 		        <li class="nav-item">
-		          <a class="nav-link d-flex align-items-center me-3" href="/list">
-		            <i class="fas fa-bookmark pe-2"></i>Liste
+		          <a class="nav-link d-flex align-items-center me-3" href="/home">
+		            <i class="fas fa-bookmark pe-2"></i>Home
 		          </a>
 		        </li>
 		        <li class="nav-item">

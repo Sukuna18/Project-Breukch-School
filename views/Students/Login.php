@@ -21,13 +21,13 @@
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="number" name="phone" id="form3Example3" class="form-control" />
+              <input type="number" name="phone" id="form3Example3" class="form-control" value="778863195"/>
               <label class="form-label" for="form3Example3">Telephone</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" name="password" id="form3Example4" class="form-control" />
+              <input type="password" name="password" id="form3Example4" class="form-control" value="**************" />
               <label class="form-label" for="form3Example4">Password</label>
             </div>
 
@@ -40,7 +40,7 @@
             </div>
 
             <!-- Submit button -->
-           <a href="/list" class="btn btn-primary">Se Connecter</a>
+           <a href="/home" class="btn btn-primary">Se Connecter</a>
           <!-- </form> -->
         </div>
       </div>

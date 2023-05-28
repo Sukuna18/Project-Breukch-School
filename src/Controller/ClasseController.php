@@ -13,12 +13,13 @@ class ClasseController extends Controller
           $this->classeModel = new ClasseModel();
         }
         public function renderClassById($params){
-      
+            $annee = $this->classeModel->getAnneeActive();
             $idNiveau = $params[0];
             $niveauId = $this->classeModel->getClassesByNiveau($idNiveau);
             $this->render('Classe/ClasseHome.php', [
                   'Styles' => 'styles/Classes.css',
-                  'niveauId' => $niveauId
+                  'niveauId' => $niveauId,
+                    'annee' => $annee
               ]);
           }
       public function index()

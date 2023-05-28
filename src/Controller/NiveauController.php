@@ -12,10 +12,12 @@ class NiveauController extends Controller
     }
     public function index()
     {
+      $annee = $this->NiveauModel->getAnneeActive();
       $niveau = $this->NiveauModel->getAllNiveaux();
         $this->render('Niveau/Niveau.html.php', [
             'Styles' => 'styles/Niveau.css',
-            'niveau' => $niveau
+            'niveau' => $niveau,
+            'annee' => $annee
         ]);
     }
   

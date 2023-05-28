@@ -16,10 +16,31 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,161,255,1) 0%, rgb
   flex-direction: column;
   justify-content: center;
   min-height: 80vh;
+	position: relative;
 }
 
 .big-link:hover {
   background-color: #e9ecef;
+}
+.fixed-icon {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  z-index: 9999;
+	background-color: blue;
+	padding: 0 10px;
+}
+.fixed-year {
+  position: absolute;
+  top: 0;
+  right: 45%;
+  font-size: 16px;
+  color: blue;
+  z-index: 9999;
+  font-size: 2rem;
 }
 		</style>
 		<!-- Navbar -->
@@ -78,14 +99,17 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,161,255,1) 0%, rgb
 		</nav>
 		<!-- Navbar -->
     <div class="container menu-contain">
+		<a class="fixed-icon" href="/class">
+    <i class="fas fa-plus"></i>
+  </a>
+	<span class="fixed-year">
+    <a href="/annee"><?= $params['annee']['libelle'] ?></a>
+  </span>
     <div class="row justify-content-center">
 			<?php foreach ($params['niveauId'] as $classe) : ?>
 					<a class="big-link" href="/list/<?= $classe['id_classe'] ?>"><?= $classe['libelle'] ?></a>
 			<?php endforeach; ?>
     </div>
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
 
 

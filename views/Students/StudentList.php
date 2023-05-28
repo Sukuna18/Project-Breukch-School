@@ -11,7 +11,7 @@
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#"><img id="MDB-logo"
+    <a class="navbar-brand" href="/home"><img id="MDB-logo"
         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo"
         draggable="false" height="30" /></a>
 

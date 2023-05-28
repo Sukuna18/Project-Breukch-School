@@ -66,14 +66,27 @@ class StudentModel extends Model
         $stmt = $this->db->getPDO()->query($sql);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
     }
+    public function getAnneeActive()
+    {
+        $sql = "SELECT * FROM Annees_scolaires WHERE active = 1";
+        $stmt = $this->db->getPDO()->query($sql);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
     public function getStudentsByClasse($idClasse)
     {
+        $activeAnnee = $this->getAnneeActive();
+    
         $sql = "SELECT s.* FROM students s
-            INNER JOIN Student_Classe sc ON s.id = sc.id
-            WHERE sc.id_classe = :idClasse";
+                INNER JOIN Student_Classe sc ON s.id = sc.id
+                WHERE sc.id_classe = :idClasse
+                AND sc.id_annee_scolaire = :idAnneeScolaire";
+    
         $stmt = $this->db->getPDO()->prepare($sql);
         $stmt->bindValue(':idClasse', $idClasse, \PDO::PARAM_INT);
+        $stmt->bindValue(':idAnneeScolaire', $activeAnnee['id_annee_scolaire'], \PDO::PARAM_INT);
         $stmt->execute();
+    
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+    
 }
