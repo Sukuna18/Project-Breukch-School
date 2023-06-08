@@ -1,0 +1,36 @@
+html,
+body,
+.intro {
+  height: 100%;
+  position: relative;
+}
+h1{
+  position: absolute;
+  top: 5%;
+  left: 40%;
+  text-decoration: underline;
+
+}
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 2px solid black;
+  text-align: center;
+}
+
+
+.card {
+  border-radius: .5rem;
+  overflow: scroll;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, .2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}

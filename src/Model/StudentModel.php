@@ -85,8 +85,13 @@ class StudentModel extends Model
         $stmt->bindValue(':idClasse', $idClasse, \PDO::PARAM_INT);
         $stmt->bindValue(':idAnneeScolaire', $activeAnnee['id_annee_scolaire'], \PDO::PARAM_INT);
         $stmt->execute();
-    
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+    // public function updateStudentsClasse($id){
+    //     $sql = "UPDATE Student_Classe SET id_classe = ? WHERE id = ?";
+    //     $stmt = $this->db->getPDO()->prepare($sql);
+    //     $stmt->execute([$id]);
+    //     return $stmt->rowCount();
+    // }
     
 }

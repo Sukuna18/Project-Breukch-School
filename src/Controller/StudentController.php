@@ -75,10 +75,10 @@ class StudentController extends Controller
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];
         $birthday = $_POST['birthday'];
-        $naissance = $_POST['lieu'];
+        $naissance = $_POST['lieu_naissance'];
         $sexe = $_POST['sexe'];
         $this->studentModel->updateStudent($id, $prenom, $nom, $birthday, $naissance, $sexe);
-        $this->redirect('/list');
+        $this->redirect('/niveau');
 
     }
     
@@ -86,16 +86,16 @@ class StudentController extends Controller
     {
         $id = $params[0];
         $this->studentModel->deleteStudent($id);
-        $this->redirect('/list');
+        $this->redirect('/niveau');
     }
     public function getAllClasses(){
         $classes = $this->studentModel->getAllClasses();
-        echo $this->json($classes);
+        $this->json($classes);
        
     }
     public function getAllNiveaux(){
         $niveaux = $this->studentModel->getAllNiveaux();
-        echo $this->json($niveaux);
+        $this->json($niveaux);
     }
     
 }

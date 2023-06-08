@@ -11,7 +11,7 @@
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="/home"><img id="MDB-logo"
+    <a class="navbar-brand" href="/niveau"><img id="MDB-logo"
         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo"
         draggable="false" height="30" /></a>
 
@@ -39,6 +39,11 @@
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center me-3" href="/add">
             <i class="fas fa-bookmark pe-2"></i>Enregister
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center me-2" href="/discipline/gestion">
+					<i class="fa-solid fa-chalkboard-user pe-2"></i>Discipline
           </a>
         </li>
 		<li class="nav-item">

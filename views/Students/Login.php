@@ -40,7 +40,7 @@
             </div>
 
             <!-- Submit button -->
-           <a href="/home" class="btn btn-primary">Se Connecter</a>
+           <a href="/niveau" class="btn btn-primary">Se Connecter</a>
           <!-- </form> -->
         </div>
       </div>

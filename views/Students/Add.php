@@ -10,7 +10,7 @@
 		  <!-- Container wrapper -->
 		  <div class="container">
 		    <!-- Navbar brand -->
-		    <a class="navbar-brand" href="/home"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
+		    <a class="navbar-brand" href="/niveau"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
 
 		    <!-- Toggle button -->
 		    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,11 +31,11 @@
 		      </form>
 
 		      <ul class="navbar-nav ms-3">
-		        <li class="nav-item">
-		          <a class="nav-link d-flex align-items-center me-3" href="/home">
-		            <i class="fas fa-bookmark pe-2"></i>Home
-		          </a>
-		        </li>
+					<li class="nav-item">
+          <a class="nav-link d-flex align-items-center me-2" href="/discipline/gestion">
+					<i class="fa-solid fa-chalkboard-user pe-2"></i>Discipline
+          </a>
+        </li>
 		        <li class="nav-item">
 		          <a class="nav-link d-flex align-items-center me-2" href="/class">
 		            <i class="fa-solid fa-landmark pe-2"></i>Classes
@@ -90,8 +90,8 @@
 		        </div>
 		        <div class="col-md-6 mt-md-0 mt-3">
 		          <label for="">Sexe</label>
-		          <input type="radio" name="sexe" value="M"> garcon
-		          <input style="display: inline;" type="radio" name="sexe" value="F"> fille
+		          <input type="radio" name="sexe" value="M"> M
+		          <input style="display: inline;" type="radio" name="sexe" value="F"> F
 		        </div>
             <h6 id="numError" style="color: red;">
 						<?php

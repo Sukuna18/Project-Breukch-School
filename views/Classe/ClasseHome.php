@@ -55,7 +55,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,161,255,1) 0%, rgb
 		  <!-- Container wrapper -->
 		  <div class="container">
 		    <!-- Navbar brand -->
-		    <a class="navbar-brand" href="/list"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
+		    <a class="navbar-brand" href="/niveau"><img id="MDB-logo" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt="MDB Logo" draggable="false" height="30" /></a>
 
 		    <!-- Toggle button -->
 		    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,6 +81,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,161,255,1) 0%, rgb
 		            <i class="fas fa-bookmark pe-2"></i>Enregister
 		          </a>
 		        </li>
+						<li class="nav-item">
+          <a class="nav-link d-flex align-items-center me-2" href="/discipline/gestion">
+					<i class="fa-solid fa-chalkboard-user pe-2"></i>Discipline
+          </a>
+        </li>
 		        <li class="nav-item">
 		          <a class="nav-link d-flex align-items-center me-2" href="/class">
 		            <i class="fa-solid fa-landmark pe-2"></i>Classes
@@ -107,7 +112,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,161,255,1) 0%, rgb
   </span>
     <div class="row justify-content-center">
 			<?php foreach ($params['niveauId'] as $classe) : ?>
-					<a class="big-link" href="/list/<?= $classe['id_classe'] ?>"><?= $classe['libelle'] ?></a>
+					<a class="big-link" href="/class/liste/<?= $classe['id_classe'] ?>"><?= $classe['libelle'] ?></a>
 			<?php endforeach; ?>
     </div>
   </div>
